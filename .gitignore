@@ -1,6 +1,8 @@
 ignorefolder/
 irre/
 selected-data/
+data-selected/
+data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
