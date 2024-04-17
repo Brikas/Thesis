@@ -2,6 +2,7 @@ from typing import List
 import fb_msg_reader as fb
 import re
 import tiktoken
+import shared_utils as utils
 
 
 
@@ -17,7 +18,7 @@ class PersonaEncoder:
     def parse_fb_messages(self, filenames, name_id, limit = None) -> None:
         msgs = fb.get_messages_from_JSONs(filenames=filenames, limit=limit)
         self.chats[name_id] = msgs
-        print(f"Messages saved to self.fb_messages['{name_id}']")
+        print(f"Messages saved to self.chats['{name_id}']")
 
 
     def filter_chats_empty(self):
@@ -84,6 +85,21 @@ class PersonaEncoder:
         finalTokens = final_tokens = len(encoding.encode(PersonaEncoder._strinfigy_chat(finalChat)))
         self.selectedChats[nameid] = finalChat
         print(f"Selected chat {nameid} for {final_tokens} ({len(finalChat)} messages)")
+
+    def count_chat_tokens(self, nameid):
+        finalChat = self.chats[nameid]
+        encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
+        finalTokens = final_tokens = len(encoding.encode(PersonaEncoder._strinfigy_chat(finalChat)))
+        print(f"Chat {nameid} has {final_tokens} ({len(finalChat)} messages)")
+
+
+    def count_all_selected_chat_tokens(self):
+        chat_tokens = {}
+        encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
+        for nameid, chat in self.selectedChats.items():
+            tokens = len(encoding.encode(PersonaEncoder._strinfigy_chat(chat)))
+            chat_tokens[nameid] = tokens
+        return chat_tokens
 
     def output(self) -> str:
         finalText = ""

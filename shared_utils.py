@@ -18,9 +18,14 @@ BLACKLIST_CHAT_REGEX_FILTERS = [
     {
         "id": "react-filter",
         "pattern": r"Reacted\s.*\sto\syour\smessage"
+    },
+    {
+        "id": "cookie-data-filter",
+        "pattern": r"\b\w{101,}\b"
     }
 ]
 
 BLACKLIST_ANSWER_SUBSTRINGS = [
     "\."
 ]
+
