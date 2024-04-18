@@ -1,5 +1,5 @@
 FROM mixtral:latest
-TEMPLATE """ [INST] {{ .System }} {{ .Prompt }} [/INST] ```json """
+TEMPLATE """ [INST] {{ .System }} {{ .Prompt }} [/INST] ```json {{ .Response }} """
 PARAMETER stop "[INST]"
 PARAMETER stop "[/INST]"
 PARAMETER stop "```"
