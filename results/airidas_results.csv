@@ -12,3 +12,6 @@ run2-airidas-video-game-cv1,0.09035539282929095,0.325,<class 'survey.KanoSurvey'
 run2-airidas-video-game-cv2,0.08709808412161543,0.4,<class 'survey.KanoSurvey'>,0.5,0.35,0.06257404940124801,2024-04-17_234724
 run2-airidas-video-game-cv3,0.14461978820433435,0.375,<class 'survey.KanoSurvey'>,0.5,0.375,-0.018335202600661793,2024-04-17_235149
 run2-airidas-video-game_smaller-context_cv1,-0.06554567164164832,0.325,<class 'survey.KanoSurvey'>,0.5,0.4,0.014175914545213615,2024-04-17_235415
+video-game_airidas_dynamic_1,0.19655698156711293,0.325,<class 'survey.KanoSurvey'>,0.5,0.35,-0.21124415859095838,2024-04-18_170204
+video-game_airidas_dynamic_2,0.349344632144348,0.375,<class 'survey.KanoSurvey'>,0.5,0.35,-0.20082275760392074,2024-04-18_170642
+video-game_airidas_dynamic_3,0.3496253080715016,0.45,<class 'survey.KanoSurvey'>,0.5,0.4,0.2711680683547036,2024-04-18_170754

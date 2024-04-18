@@ -27,7 +27,7 @@ def assistantMsg(*args) -> dict:
 def systemMsg(*args) -> dict:
     return {"role": "system", "content": "\n".join(args)}
 
-def describe_prompts(final_prompts: List[List[Dict]]):
+def describe_prompts_and_print(final_prompts: List[List[Dict]]) -> Dict:
     total_all_prompt_tokens = 0 #used elsewhere too
     prompt_tokens_min = 0
     prompt_tokens_max = 0
@@ -45,6 +45,12 @@ def describe_prompts(final_prompts: List[List[Dict]]):
     print(f"Created {len(final_prompts)} prompts.")
     print(f"Average prompt size: {round(total_all_prompt_tokens/len(final_prompts))} tokens.")
     print(f"Min prompt size: {prompt_tokens_min}, Max prompt size: {prompt_tokens_max}")
+
+    return {
+        "total_all_prompt_tokens": total_all_prompt_tokens,
+        "prompt_tokens_min": prompt_tokens_min,
+        "prompt_tokens_max": prompt_tokens_max
+    }
 
 
 BLACKLIST_CHAT_REGEX_FILTERS = [
