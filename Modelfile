@@ -1,4 +1,4 @@
-FROM Mistral:latest
+FROM mixtral:latest
 TEMPLATE """ [INST] {{ .System }} {{ .Prompt }} [/INST] ```json """
 PARAMETER stop "[INST]"
 PARAMETER stop "[/INST]"
