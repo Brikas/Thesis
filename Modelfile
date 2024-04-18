@@ -1,0 +1,7 @@
+FROM Mistral:latest
+TEMPLATE """ [INST] {{ .System }} {{ .Prompt }} [/INST] ```json """
+PARAMETER stop "[INST]"
+PARAMETER stop "[/INST]"
+PARAMETER stop "```"
+PARAMETER stop "´´´"
+PARAMETER stop "'''"
