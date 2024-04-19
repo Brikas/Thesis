@@ -1,6 +1,15 @@
 from typing import List, Dict
 import pandas as pd
 
+def validateMatchingSurvey(surv, simulation_questions) -> bool:
+    ver = pd.DataFrame(surv.questions)
+    ver["simulation"] = simulation_questions
+    ver["is_same"] = ver["question"] == ver["simulation"]
+    if ver["is_same"].all():
+        return True
+    else:
+        print("CRITICAL WARNING: Some questions are different. Inspect the DF")
+        return False
 
 class KanoSurvey:
 
