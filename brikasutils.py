@@ -5,7 +5,8 @@ import csv
 import os
 
 
-__version__ = "2024-03-12"
+
+__version__ = "2024-04-19"
 
 def gpt(text, gpt4: bool = True, return_full_response: bool = False, api_key = None, model=None, context = []):
     import requests
@@ -318,7 +319,6 @@ class Benchmarker(object):
     Benchmarker takes any amount of checkpoints entries, consisting of key, and 
     time (defaults to current).
     Add checkpoints by checkpoint(key, time = now).
-    Display duration of all checkpoints by finish_benckmarking()
 
     For specific benchmarking use mark_start(key), mark_end(key) and get_time(key).
 
@@ -357,14 +357,18 @@ class Benchmarker(object):
         Returns the duration of a mark in seconds with many decimal points.
         Use get_time_formatted() or get_time() for convenient output
         """
+        missing_end = False
         try:
             self.marks[key][0]
         except:
             print(f"Benchmarker ERROR: mark {key} was never started. Ignoring call.")
             return
         try:
-            self.marks[key][1]
+            if self.marks[key][1] == None: missing_end = True
         except:
+            missing_end = True
+
+        if missing_end:
             print(f"Benchmarker WARNING: mark {key} was never ended. Taking current time as end time.")
             self.marks[key][1] = time()
 
@@ -410,6 +414,7 @@ class Benchmarker(object):
         End counting duration of an existing mark.
 
         Returns rounded duration in seconds.\n \tBy default, also prints formated display.
+        Onerror, returns None.
         """
         if key in self._repeating_keys.keys():
             key = f"{key}_{self._repeating_keys[key]}"
@@ -418,7 +423,7 @@ class Benchmarker(object):
             self.marks[key][0]
         except:
             print(f"Benchmarker ERROR: mark {key} was never started. Ignoring end call.")
-            return
+            return None
 
         self.marks[key][1] = time()
         output = self.get_mark_duration(key)
@@ -605,8 +610,22 @@ class LiveCSV():
         self.is_loaded = True
 
 class FileRunQueue():
+    """
+    Basic usage:
+    queue = FileRunQueue()
+    for filepath in queue:
+        print(f"Running {filepath}")
+        # do something with the file
+    """
+
     def __init__(self, queue_folder_path = "queue", verbose = True, do_move = True, completed_folder_path = None):
+        """
+        @param queue_folder_path: str - path to the folder where the files are stored.
+        @param completed_folder_path: str - path to the folder where the completed files are stored. If None, then it is set to queue_folder_path/done
+        @param do_move: bool - if True, then moves the file to the completed folder. If False, then adds the file to done_files.
+        """
         
+
         self.queue_folder_path = queue_folder_path
         self.verbose = verbose
         self._completed = 0
@@ -621,7 +640,7 @@ class FileRunQueue():
     def __iter__(self):
         return self
 
-    def __next__(self):
+    def __next__(self) -> str:
         from os import walk
         if self._last_file is not None:
             self.move_last_file()
@@ -665,8 +684,10 @@ class FileRunQueue():
         @returns True if needs to stop, False if needs to continue.
         """
         from inputimeout import inputimeout, TimeoutOccurred
+        
         try:
             c = inputimeout(prompt=f'Error encountered. Type anything to quit all. (auto continue in {timeout} s.): ', timeout=timeout)
+        # except:
         except TimeoutOccurred:
             print("Auto continueing with next task...")
             return False
