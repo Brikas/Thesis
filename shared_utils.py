@@ -73,6 +73,6 @@ BLACKLIST_CHAT_REGEX_FILTERS = [
 ]
 
 BLACKLIST_ANSWER_SUBSTRINGS = [
-    "\."
+    "\.", "\!"
 ]
 
