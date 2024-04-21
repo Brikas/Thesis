@@ -1,7 +1,7 @@
 from typing import List, Dict
 import pandas as pd
 
-def validateMatchingSurvey(surv, simulation_questions) -> bool:
+def validateMatchingSurvey(surv, simulation_questions):
     ver = pd.DataFrame(surv.questions)
     ver["simulation"] = simulation_questions
     ver["is_same"] = ver["question"] == ver["simulation"]
@@ -9,7 +9,7 @@ def validateMatchingSurvey(surv, simulation_questions) -> bool:
         return True
     else:
         print("CRITICAL WARNING: Some questions are different. Inspect the DF")
-        return False
+        return ver
 
 class KanoSurvey:
 
