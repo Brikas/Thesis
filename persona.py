@@ -1,10 +1,8 @@
 from typing import List
-import fb_msg_reader as fb
+import standard_msg_reader as msg_reader
 import re
 import tiktoken
 import shared_utils as utils
-
-
 
 
 class PersonaEncoder:
@@ -16,7 +14,18 @@ class PersonaEncoder:
         self.selectedChats = {}
 
     def parse_fb_messages(self, filenames, name_id, limit = None) -> None:
-        msgs = fb.get_messages_from_JSONs(filenames=filenames, limit=limit)
+        """
+        Parses Facebook Messages
+        """
+        msgs = msg_reader.get_facebook_messages_from_JSONs(filenames=filenames, limit=limit)
+        self.chats[name_id] = msgs
+        print(f"Messages saved to self.chats['{name_id}']")
+
+    def parse_wa_messages(self, filenames, name_id, limit = None) -> None:
+        """
+        Parses WhatsApp Messages
+        """
+        msgs = msg_reader.get_whatsapp_messages_from_JSONs(filenames=filenames, limit=limit)
         self.chats[name_id] = msgs
         print(f"Messages saved to self.chats['{name_id}']")
 
@@ -54,7 +63,7 @@ class PersonaEncoder:
         for key,value in logs.items():
             print(f"{key}: {value}")
 
-    def _strinfigy_chat(chat: List[fb.Message]):
+    def _strinfigy_chat(chat: List[msg_reader.Message]):
         blocks = []
         for msg in chat:
             block = f"{msg.sender}: {msg.content}"

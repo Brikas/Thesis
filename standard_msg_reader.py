@@ -39,24 +39,25 @@ class Message:
         r["date"] = self.get_datetime().strftime('%Y-%m-%d %H:%M:%S.%f')[:-1]
         return r
 
-
 def _try_read(msg, key, msg_on_error = None):
     try:
         return msg[key]
     except:
         if msg_on_error is not None: print(msg_on_error)
         return None
-
-def get_messages_from_JSONs(filenames, limit = None) -> list[Message]:
+    
+def _parse_standard_messages_from_JSONs(filenames, limit = None, flag = None) -> list[Message]:
     """
     Returns list of Messages
     """
-    # Fixing facebook encoding
-    # Code borrowed from https://stackoverflow.com/questions/50008296/facebook-json-badly-encoded
-    fix_mojibake_escapes = partial(
-        re.compile(rb'\\u00([\da-f]{2})').sub,
-        lambda m: bytes.fromhex(m.group(1).decode()))
-    #######
+
+    if flag == "fix_facebook_encoding":
+        # Fixing facebook encoding
+        # Code borrowed from https://stackoverflow.com/questions/50008296/facebook-json-badly-encoded
+        fix_mojibake_escapes = partial(
+            re.compile(rb'\\u00([\da-f]{2})').sub,
+            lambda m: bytes.fromhex(m.group(1).decode()))
+        #######
 
     sequence = 1
     parsed_messages = []
@@ -69,12 +70,15 @@ def get_messages_from_JSONs(filenames, limit = None) -> list[Message]:
     for filename in filenames:
         if limit is not None and sequence >= limit: break
         # print("Reading", filename, "...")
-        # Fixing facebook encoding
-        # Code borrowed from https://stackoverflow.com/questions/50008296/facebook-json-badly-encoded 
-        with open(filename, 'rb') as binary_data:
-            repaired = fix_mojibake_escapes(binary_data.read())
-            data = json.loads(repaired.decode('utf8'))
-        ####
+        if flag == "fix_facebook_encoding":
+            # Code borrowed from https://stackoverflow.com/questions/50008296/facebook-json-badly-encoded 
+            with open(filename, 'rb') as binary_data:
+                repaired = fix_mojibake_escapes(binary_data.read())
+                data = json.loads(repaired.decode('utf8'))
+            ####
+        else:
+            with open(filename, 'r', encoding="utf8") as jsonfile:
+                data = json.load(jsonfile)
 
         try:
             imported_msgs = data['messages']
@@ -115,4 +119,18 @@ def get_messages_from_JSONs(filenames, limit = None) -> list[Message]:
     print(f"Messages ranged from {smallest_timestamp.get_datetime().strftime('%Y-%m-%d')}",
           f"to {biggest_timestamp.get_datetime().strftime('%Y-%m-%d')}")
     return parsed_messages
+
+
+def get_facebook_messages_from_JSONs(filenames, limit = None) -> list[Message]:
+    """
+    Returns list of Messages.
+    For facebook, it uses a fix for the encoding.
+    """
+    return _parse_standard_messages_from_JSONs(filenames, limit, flag="fix_facebook_encoding")
+    
+def get_whatsapp_messages_from_JSONs(filenames, limit = None) -> list[Message]:
+    """
+    Returns list of Messages.
+    """
+    return _parse_standard_messages_from_JSONs(filenames, limit)
     
