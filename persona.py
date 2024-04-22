@@ -18,7 +18,7 @@ class PersonaEncoder:
         Parses Facebook Messages
         """
         msgs = msg_reader.get_facebook_messages_from_JSONs(filenames=filenames, limit=limit)
-        self.chats[name_id] = msgs
+        self.chats[name_id] = list(reversed(msgs))
         print(f"Messages saved to self.chats['{name_id}']")
 
     def parse_wa_messages(self, filenames, name_id, limit = None) -> None:
@@ -26,7 +26,7 @@ class PersonaEncoder:
         Parses WhatsApp Messages
         """
         msgs = msg_reader.get_whatsapp_messages_from_JSONs(filenames=filenames, limit=limit)
-        self.chats[name_id] = msgs
+        self.chats[name_id] = list(reversed(msgs))
         print(f"Messages saved to self.chats['{name_id}']")
 
 
