@@ -113,7 +113,7 @@ def quickJSON(dictionary, filename=""):
         filename = "quickJSON" + get_timestamp() + ".json"
 
     with open(filename, 'w') as fp:
-        json.dump(dictionary, fp)
+        json.dump(dictionary, fp, indent=4)
 
 def quickTXT(data, filename=""):
     if (filename == ""):

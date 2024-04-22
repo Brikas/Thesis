@@ -3,7 +3,7 @@
         "prompt_file": "batch/prompts/airidas-personality_cv1_prompts.json",
         "survey_type": "PersonalitySurvey",
         "isLocal": false,
-        "LIMIT": 3
+        "LIMIT": null
     },
     "settings": {
         "model": "gpt-3.5-turbo",
