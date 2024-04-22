@@ -1,0 +1,13 @@
+﻿filename,timestamp,time_taken,status,prompt_file,survey_type,isLocal,LIMIT,error
+base_game_llama_1,2024-04-22_142659,96.869,OK,batch/prompts/game_base_prompts.json,KanoSurvey,True,,
+base_personality_llama_1,2024-04-22_142836,93.719,OK,batch/prompts/personality_base_prompts.json,PersonalitySurvey,True,,
+elias_personality_r_1,2024-04-22_143010,73.512,OK,batch/prompts/personality_batch-A_8k-static_prompts.json,PersonalitySurvey,True,,
+elias_game_llama_1,2024-04-22_143123,96.266,OK,batch/prompts/game_batch-A_8k-static_prompts.json,KanoSurvey,True,,
+elias_personality_mixtral_1,2024-04-22_143259,113.677,OK,batch/prompts/personality_batch-A_8k-static_prompts.json,PersonalitySurvey,True,,
+elias_game_mixtral_1,2024-04-22_143453,45.88,OK,batch/prompts/game_batch-A_8k-static_prompts.json,KanoSurvey,True,,
+base_personality_r_1,2024-04-22_143539,60.581,OK,batch/prompts/personality_base_prompts.json,PersonalitySurvey,True,,
+elias_personality_llama_1,2024-04-22_143640,135.908,OK,batch/prompts/personality_batch-A_8k-static_prompts.json,PersonalitySurvey,True,,
+base_game_r_1,2024-04-22_143856,52.826,OK,batch/prompts/game_base_prompts.json,KanoSurvey,True,,
+base_game_mixtral_1,2024-04-22_143948,119.689,OK,batch/prompts/game_base_prompts.json,KanoSurvey,True,,
+elias_game_r_1,2024-04-22_144148,63.572,OK,batch/prompts/game_batch-A_8k-static_prompts.json,KanoSurvey,True,,
+base_personality_mixtral_1,2024-04-22_144252,74.575,OK,batch/prompts/personality_base_prompts.json,PersonalitySurvey,True,,

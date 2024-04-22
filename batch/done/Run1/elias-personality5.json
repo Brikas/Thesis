@@ -6,8 +6,7 @@
         "LIMIT": null
     },
     "settings": {
-        "model": "llama3:70b",
-        // "temperature": 0.5,
+        "model": "mixtral:8x22b-instruct-v0.1-q2_K",
         "timeout": 300
     },
     "info": {
