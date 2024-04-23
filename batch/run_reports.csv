@@ -21,3 +21,69 @@ base_kano_v2_llama3_1,2024-04-22_173535,69.699,OK,batch/prompts/base_kano_v2.jso
 airi_kano_v2_static_llama3_2,2024-04-22_173645,116.617,OK,batch/prompts/airidas_kano_v2_static.json,KanoSurvey,True,,
 airi_kano_v2_static_llama3_3,2024-04-22_173841,74.238,OK,batch/prompts/airidas_kano_v2_static.json,KanoSurvey,True,,
 airi_kano_v2_dynamic_llama3_1,2024-04-22_173956,1701.622,OK,batch/prompts/airidas_kano_v2_dynamic.json,KanoSurvey,True,,
+airi_personality_v2_static_llama3_3,2024-04-23_000150,104.461,OK,batch/prompts/airidas_personality_v2_static.json,PersonalitySurvey,True,,
+airi_personality_v2_dynamic_llama3_2,2024-04-23_000334,1377.331,OK,batch/prompts/airidas_personality_v2_dynamic.json,PersonalitySurvey,True,,
+airi_personality_v2_dynamic_llama3_3,2024-04-23_002632,1850.059,OK,batch/prompts/airidas_personality_v2_dynamic.json,PersonalitySurvey,True,,
+airi_personality_v2_static_llama3_2,2024-04-23_005722,136.75,OK,batch/prompts/airidas_personality_v2_static.json,PersonalitySurvey,True,,
+eli_personality_static_llama3_1,2024-04-23_005939,128.776,OK,batch/prompts/personality_batch-A_8k-static_prompts.json,PersonalitySurvey,True,,
+airi_kano_v2_static_llama3_ctx7x_2,2024-04-23_010147,112.186,OK,batch/prompts/airidas_kano_v2_static_ctx7x.json,KanoSurvey,True,,
+eli_game_static_llama3_2,2024-04-23_010340,96.266,OK,batch/prompts/game_batch-A_8k-static_prompts.json,KanoSurvey,True,,
+eli_kano_dynamic_llama3_2,2024-04-23_010516,0.139,Failed,batch/prompts/personality_batch-B_8k-dynamic_prompts.json,PersonalitySurvey,False,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_37303/542930999.py"", line 64, in <module>
+    client = OpenAI(
+             ^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/openai/_client.py"", line 104, in __init__
+    raise OpenAIError(
+openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+"
+base_personality_v2_llama3_3,2024-04-23_010516,67.841,OK,batch/prompts/base_personality_v2.json,PersonalitySurvey,True,,
+base_personality_v2_llama3_2,2024-04-23_010624,65.809,OK,batch/prompts/base_personality_v2.json,PersonalitySurvey,True,,
+eli_kano_dynamic_llama3_3,2024-04-23_010730,0.137,Failed,batch/prompts/personality_batch-B_8k-dynamic_prompts.json,PersonalitySurvey,False,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_37303/542930999.py"", line 64, in <module>
+    client = OpenAI(
+             ^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/openai/_client.py"", line 104, in __init__
+    raise OpenAIError(
+openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+"
+eli_personality_dynamic_llama3_1,2024-04-23_010730,0.081,Failed,batch/prompts/game_batch-B_8k-dynamic_prompts.json,KanoSurvey,False,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_37303/542930999.py"", line 64, in <module>
+    client = OpenAI(
+             ^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/openai/_client.py"", line 104, in __init__
+    raise OpenAIError(
+openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+"
+eli_game_static_llama3_3,2024-04-23_010730,96.045,OK,batch/prompts/game_batch-A_8k-static_prompts.json,KanoSurvey,True,,
+airi_kano_v2_static_llama3_ctx7x_3,2024-04-23_010906,109.977,OK,batch/prompts/airidas_kano_v2_static_ctx7x.json,KanoSurvey,True,,
+eli_personality_static_llama3_3,2024-04-23_011056,120.184,OK,batch/prompts/personality_batch-A_8k-static_prompts.json,PersonalitySurvey,True,,
+base_personality_v2_llama3_1,2024-04-23_011256,67.779,OK,batch/prompts/base_personality_v2.json,PersonalitySurvey,True,,
+eli_personality_dynamic_llama3_2,2024-04-23_011404,0.101,Failed,batch/prompts/game_batch-B_8k-dynamic_prompts.json,KanoSurvey,False,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_37303/542930999.py"", line 64, in <module>
+    client = OpenAI(
+             ^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/openai/_client.py"", line 104, in __init__
+    raise OpenAIError(
+openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+"
+airi_kano_v2_static_llama3_ctx7x_1,2024-04-23_011404,109.22,OK,batch/prompts/airidas_kano_v2_static_ctx7x.json,KanoSurvey,True,,
+eli_game_static_llama3_1,2024-04-23_011553,94.804,OK,batch/prompts/game_batch-A_8k-static_prompts.json,KanoSurvey,True,,
+eli_personality_dynamic_llama3_3,2024-04-23_011728,0.103,Failed,batch/prompts/game_batch-B_8k-dynamic_prompts.json,KanoSurvey,False,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_37303/542930999.py"", line 64, in <module>
+    client = OpenAI(
+             ^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/openai/_client.py"", line 104, in __init__
+    raise OpenAIError(
+openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+"
+eli_kano_dynamic_llama3_1,2024-04-23_011728,0.115,Failed,batch/prompts/personality_batch-B_8k-dynamic_prompts.json,PersonalitySurvey,False,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_37303/542930999.py"", line 64, in <module>
+    client = OpenAI(
+             ^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/openai/_client.py"", line 104, in __init__
+    raise OpenAIError(
+openai.OpenAIError: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
+"
+eli_personality_static_llama3_2,2024-04-23_011728,118.644,OK,batch/prompts/personality_batch-A_8k-static_prompts.json,PersonalitySurvey,True,,
+airi_personality_v2_static_llama3_1,2024-04-23_011927,128.76,OK,batch/prompts/airidas_personality_v2_static.json,PersonalitySurvey,True,,
+airi_personality_v2_dynamic_llama3_1,2024-04-23_012136,1746.237,OK,batch/prompts/airidas_personality_v2_dynamic.json,PersonalitySurvey,True,,
