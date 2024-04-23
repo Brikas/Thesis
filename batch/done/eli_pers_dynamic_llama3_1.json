@@ -1,8 +1,8 @@
 {
     "instructions": {
-        "prompt_file": "batch/prompts/game_batch-B_8k-dynamic_prompts.json",
-        "survey_type": "KanoSurvey",
-        "isLocal": false,
+        "prompt_file": "batch/prompts/personality_batch-B_8k-dynamic_prompts.json",
+        "survey_type": "PersonalitySurvey",
+        "isLocal": true,
         "LIMIT": null
     },
     "settings": {
