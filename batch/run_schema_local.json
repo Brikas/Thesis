@@ -1,0 +1,18 @@
+{
+    "instructions": {
+        "prompt_file": "batch/prompts/airidas-personality_cv1_prompts.json",
+        "survey_type": "PersonalitySurvey",
+        "isLocal": true,
+        "LIMIT": null
+    },
+    "settings": {
+        "model": "llama3",
+        "timeout": 300,
+        "system": "You are about to start a survey. Once you start, you will have 5 minutes to complete it. Please answer the questions as accurately as possible. If you are not sure about the answer, please select the option that is closest to your opinion."
+    },
+    "info": {
+        "EMBEDDING_NAMEID": "test1",
+        "RETRIEVAL_PROMPT": "openess conciousness extrovert aggreableness neuroticism",
+        "CHUNKS_COUNT_IN_CTX": 30
+    }
+}

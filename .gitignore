@@ -2,7 +2,11 @@ ignorefolder/
 irre/
 selected-data/
 data/
+
+# Annoying merge errors if not:
 elias.ipynb
+elias_analysis.ipynb
+elias_sim.ipynb
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
