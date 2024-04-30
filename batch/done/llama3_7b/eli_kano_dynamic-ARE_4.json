@@ -10,6 +10,6 @@
         "timeout": 300
     },
     "info": {
-        "EMBEDDING_NAMEID": "look in chunks"
+        "EMBEDDING_NAMEID": "Not in chunks?"
     }
 }

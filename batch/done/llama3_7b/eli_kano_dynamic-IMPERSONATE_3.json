@@ -1,6 +1,6 @@
 {
     "instructions": {
-        "prompt_file": "batch/prompts/40-10-10-8k_kano-dynamic_Elias-ARE_prompts.json",
+        "prompt_file": "batch/prompts/40-10-10-8k_kano-dynamic_Elias-IMPERSONATE_prompts.json",
         "survey_type": "KanoSurvey",
         "isLocal": true,
         "LIMIT": null
@@ -10,6 +10,6 @@
         "timeout": 300
     },
     "info": {
-        "EMBEDDING_NAMEID": "look in chunks"
+        "EMBEDDING_NAMEID": "Not in chunks?"
     }
 }
