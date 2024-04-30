@@ -3,10 +3,12 @@ from time import sleep
 from time import time
 import csv
 import os
+import sys
+import io
 
 
 
-__version__ = "2024-04-19"
+__version__ = "2024-05-01"
 
 def gpt(text, gpt4: bool = True, return_full_response: bool = False, api_key = None, model=None, context = []):
     import requests
@@ -200,6 +202,25 @@ def mute(f):
         sys.stdout = original_stdout
     
     return wrapper
+
+class MutePrint:
+    """
+    Usage:
+    with MutePrint():
+        print("This will not be shown.")
+
+    print("This will be shown.")
+    """
+
+    def __enter__(self):
+        
+        self.original_stdout = sys.stdout
+        sys.stdout = io.StringIO()
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        sys.stdout = self.original_stdout
+
 
 def remove_duplicates_list_of_lists(list_of_lists) -> list:
     """

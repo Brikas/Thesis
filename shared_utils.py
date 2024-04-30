@@ -4,6 +4,9 @@ from openai import OpenAI
 import os
 import numpy as np
 from numpy.linalg import norm
+import pandas as pd
+import json
+
 
 def count_tokens(string: str) -> int:
     """Returns the number of tokens in a text string."""
@@ -56,6 +59,30 @@ def describe_prompts_and_print(final_prompts: List[List[Dict]]) -> Dict:
     print(f"Min prompt size: {info['prompt_tokens_min']}, Max prompt size: {info['prompt_tokens_max']}")
     return info
 
+def bring_to_front_important_columns(df: pd.DataFrame, cols_to_front: List[str]):
+    # Reorder columns by notna counts
+    non_nan_counts = df.notna().sum()
+    sorted_columns = non_nan_counts.sort_values(ascending=False).index
+    df = df[sorted_columns]
+
+    # Bring to front the columns that are important
+    new_order = [col for col in cols_to_front if col in df.columns] + [col for col in df.columns if col not in cols_to_front]
+    df = df[new_order]
+    return df
+
+def load_sim(path) -> Dict:
+    """Simply loads a simulation .json file to a dictionary."""
+    with open(path, 'r') as f:
+        sim = json.load(f)
+    return sim
+
+def dataframe_from_QA(qa) -> pd.DataFrame:
+    """Loads a simulation .json file to a pandas DataFrame. Does not include info data."""
+    dfs = pd.DataFrame(qa)
+    dfs.columns = dfs.iloc[0]  # Set the first row as the header
+    dfs = dfs[1:]  
+
+    return dfs
 
 BLACKLIST_CHAT_REGEX_FILTERS = [
     {
