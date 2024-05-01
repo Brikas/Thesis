@@ -1,0 +1,91 @@
+﻿filename,time_taken,status,prompt_file,survey_type,isLocal,LIMIT,error
+kano_base_batch-schema_1,0.0,Failed,batch/prompts/kano_base_prompt.json,KanoSurvey,True,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_25160/1053251499.py"", line 32, in <module>
+    with open(rundata[""instructions""][""prompt_file""], 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/IPython/core/interactiveshell.py"", line 324, in _modified_open
+    return io_open(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'batch/prompts/kano_base_prompt.json'
+"
+pers_base_batch-schema_1,0.0,Failed,batch/prompts/pers_base_prompt.json,PersonalitySurvey,True,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_25160/1053251499.py"", line 32, in <module>
+    with open(rundata[""instructions""][""prompt_file""], 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/IPython/core/interactiveshell.py"", line 324, in _modified_open
+    return io_open(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'batch/prompts/pers_base_prompt.json'
+"
+kano_base_batch-schema_4,0.0,Failed,batch/prompts/kano_base_prompt.json,KanoSurvey,True,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_25160/1053251499.py"", line 32, in <module>
+    with open(rundata[""instructions""][""prompt_file""], 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/IPython/core/interactiveshell.py"", line 324, in _modified_open
+    return io_open(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'batch/prompts/kano_base_prompt.json'
+"
+pers_base_batch-schema_2,0.0,Failed,batch/prompts/pers_base_prompt.json,PersonalitySurvey,True,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_25160/1053251499.py"", line 32, in <module>
+    with open(rundata[""instructions""][""prompt_file""], 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/IPython/core/interactiveshell.py"", line 324, in _modified_open
+    return io_open(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'batch/prompts/pers_base_prompt.json'
+"
+pers_base_batch-schema_3,0.0,Failed,batch/prompts/pers_base_prompt.json,PersonalitySurvey,True,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_25160/1053251499.py"", line 32, in <module>
+    with open(rundata[""instructions""][""prompt_file""], 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/IPython/core/interactiveshell.py"", line 324, in _modified_open
+    return io_open(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'batch/prompts/pers_base_prompt.json'
+"
+kano_base_batch-schema_5,0.0,Failed,batch/prompts/kano_base_prompt.json,KanoSurvey,True,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_25160/1053251499.py"", line 32, in <module>
+    with open(rundata[""instructions""][""prompt_file""], 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/IPython/core/interactiveshell.py"", line 324, in _modified_open
+    return io_open(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'batch/prompts/kano_base_prompt.json'
+"
+kano_base_batch-schema_2,0.0,Failed,batch/prompts/kano_base_prompt.json,KanoSurvey,True,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_25160/1053251499.py"", line 32, in <module>
+    with open(rundata[""instructions""][""prompt_file""], 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/IPython/core/interactiveshell.py"", line 324, in _modified_open
+    return io_open(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'batch/prompts/kano_base_prompt.json'
+"
+pers_base_batch-schema_4,0.0,Failed,batch/prompts/pers_base_prompt.json,PersonalitySurvey,True,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_25160/1053251499.py"", line 32, in <module>
+    with open(rundata[""instructions""][""prompt_file""], 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/IPython/core/interactiveshell.py"", line 324, in _modified_open
+    return io_open(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'batch/prompts/pers_base_prompt.json'
+"
+pers_base_batch-schema_5,0.0,Failed,batch/prompts/pers_base_prompt.json,PersonalitySurvey,True,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_25160/1053251499.py"", line 32, in <module>
+    with open(rundata[""instructions""][""prompt_file""], 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/IPython/core/interactiveshell.py"", line 324, in _modified_open
+    return io_open(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'batch/prompts/pers_base_prompt.json'
+"
+kano_base_batch-schema_3,0.0,Failed,batch/prompts/kano_base_prompt.json,KanoSurvey,True,,"Traceback (most recent call last):
+  File ""/var/folders/bk/njz8h9d15b78r5q_bldv98zc0000gp/T/ipykernel_25160/1053251499.py"", line 32, in <module>
+    with open(rundata[""instructions""][""prompt_file""], 'r') as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File ""/opt/homebrew/lib/python3.11/site-packages/IPython/core/interactiveshell.py"", line 324, in _modified_open
+    return io_open(file, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'batch/prompts/kano_base_prompt.json'
+"
