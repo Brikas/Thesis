@@ -1,6 +1,6 @@
 {
     "instructions": {
-        "prompt_file": "batch/prompts/base_personality_v2.json",
+        "prompt_file": "batch/prompts/base_pers_v2.json",
         "survey_type": "PersonalitySurvey",
         "isLocal": true,
         "LIMIT": null
@@ -11,7 +11,6 @@
     },
     "info": {
         "note": "",
-
         "avg_tokens_in_prompt": 94,
         "prompt_count": 50,
         "prompt_tokens_max": 99,
