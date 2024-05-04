@@ -12,6 +12,8 @@ class PersonaEncoder:
     def __init__(self):
         self.chats = {}
         self.selectedChats = {}
+        self.nonChatModules = {}
+        self.selectedNonChatModules = {}
 
     def parse_fb_messages(self, filenames, name_id, limit = None) -> None:
         """
@@ -95,6 +97,11 @@ class PersonaEncoder:
         self.selectedChats[nameid] = finalChat
         print(f"Selected chat {nameid} for {final_tokens} ({len(finalChat)} messages)")
 
+    def select_nonChat_module_full(self, nameid):
+        finalModule = self.nonChatModules[nameid]
+        self.selectedNonChatModules[nameid] = finalModule
+        print(f"Selected module {nameid}")
+
     def count_chat_tokens(self, nameid):
         finalChat = self.chats[nameid]
         encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
@@ -117,3 +124,50 @@ class PersonaEncoder:
         
         return finalText
     
+    def parse_rosebud_entries(self, filename, name_id):
+        """
+        Parses Rosebud Diaries
+        """
+        with open(filename, 'r', encoding="utf-8") as file:
+            md_text = file.read()
+
+        blocks = []
+        h2_nested = re.findall(r'(?<!#)##(?!#)\s[\s\S]*?---', md_text)
+        for h2_n in h2_nested:
+            block = {}
+            title = re.findall(r'(?<!#)##(?!#)\s([\s\S]*?)[\n\r]', h2_n)
+            date = re.findall(r'(?<!#)###(?!#)\s([\s\S]*?)[\n\r]', h2_n)
+            content = re.findall(r'(?<!#)###(?!#)\s[\s\S]*?[\n\r]([\s\S]*?)---', h2_n)
+            msgs = re.findall(r'[\s\S]*?(?:\n\n|---)', content[0])
+            block['title'] = title[0]
+            block['date'] = date[0]
+            block['msgs'] = msgs
+            blocks.append(block)
+
+        self.nonChatModules[name_id] = blocks
+
+
+        # Display the results
+        total_msgs, min_msgs, max_msgs = 0, len(blocks[0]['msgs']), len(blocks[0]['msgs'])
+        total_tokens, min_tokens, max_tokens = 0, utils.count_tokens(blocks[0]['msgs'][0]), utils.count_tokens(blocks[0]['msgs'][0])
+
+        for block in blocks:
+            block_msgs_count = len(block['msgs'])
+            total_msgs += block_msgs_count  
+            min_msgs = min(min_msgs, block_msgs_count)
+            max_msgs = max(max_msgs, block_msgs_count)
+            
+            for msg in block['msgs']:
+                tokens_count = utils.count_tokens(msg)
+                total_tokens += tokens_count
+                min_tokens = min(min_tokens, tokens_count)
+                max_tokens = max(max_tokens, tokens_count)
+
+        # Calculate averages
+        average_msgs = total_msgs / len(blocks)
+        average_tokens = total_tokens / len(blocks)
+
+        # Print results
+        print(f"Read {len(blocks)} rosebud entries.")
+        print(f"Average messages per block: {round(average_msgs,2)} ({min_msgs} - {max_msgs})")
+        print(f"Average tokens per block: {round(average_tokens,2)} ({min_tokens} - {max_tokens})")
