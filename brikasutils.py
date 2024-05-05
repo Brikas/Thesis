@@ -6,8 +6,6 @@ import os
 import sys
 import io
 
-
-
 __version__ = "2024-05-01"
 
 def gpt(text, gpt4: bool = True, return_full_response: bool = False, api_key = None, model=None, context = []):
