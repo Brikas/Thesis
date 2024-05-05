@@ -46,6 +46,7 @@ def describe_prompts(final_prompts: List[List[Dict]]) -> Dict:
         total_all_prompt_tokens += pt
 
     return {
+        'average_prompt_tokens': round(total_all_prompt_tokens/len(final_prompts)), 
         "total_all_prompt_tokens": total_all_prompt_tokens,
         "prompt_tokens_min": prompt_tokens_min,
         "prompt_tokens_max": prompt_tokens_max
