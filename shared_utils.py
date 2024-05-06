@@ -95,6 +95,10 @@ BLACKLIST_CHAT_REGEX_FILTERS = [
         "pattern": r"Reacted\s.*\sto\syour\smessage"
     },
     {
+        "id": "danish-react-filter",
+        "pattern": r"Har\sreageret\smed\s.*\spå\sdin\sbesked"
+    },
+    {
         "id": "cookie-data-filter",
         "pattern": r"\b\w{101,}\b"
     }
