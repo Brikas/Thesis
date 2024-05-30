@@ -30,6 +30,18 @@ def assistantMsg(*args) -> dict:
 def systemMsg(*args) -> dict:
     return {"role": "system", "content": "\n".join(args)}
 
+
+def calc_MAE(prediction: pd.Series, target: pd.Series):
+    return (prediction - target).abs().sum() / len(prediction)
+
+def unclutterSignature(baseSign: str):
+    remove_list = ('-29', '_V7')
+    for remove_item in remove_list:
+        baseSign = baseSign.replace(remove_item, '')
+    return baseSign
+
+
+
 def describe_prompts(final_prompts: List[List[Dict]]) -> Dict:
     total_all_prompt_tokens = 0 #used elsewhere too
     prompt_tokens_min = 0
